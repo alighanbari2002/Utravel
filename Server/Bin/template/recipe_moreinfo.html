@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="common_inputs.css">
+    <link rel="stylesheet" href="recipe_moreinfo.css">
+    <title>Goodeats</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Flight" id="Flight">
+            <div class="imgContainer">
+                <img id="FlightImg" src='<% cout << context["imgLink"]; %>' alt="Flight's image" title="">
+            </div>
+            <p>ID: <% cout << context["id"]; %> </p>
+            <p>Title: <% cout << context["title"]; %> </p>
+            <p>Airline: <% cout << context["Airline"]; %> </p>
+
+    <script>
+        //rate form hidden input
+        document.getElementById("rateId").value = '<% cout << context["id"]; %>';
+        
+        //change rate slider's text
+        let rateSlider = document.getElementById("rating");
+        let rateText = document.getElementById("ratingText");
+        let userRating = '<% cout << context["userRating"]; %>';
+        document.getElementById("yourRating").innerHTML = userRating;
+        rateSlider.value = userRating;
+        rateText.innerHTML = rateSlider.value;
+        rateSlider.oninput = function () {
+            rateText.innerHTML = this.value;
+        }
+
+        function rate() {
+            if (rateSlider.value == userRating) {
+                alert("Your rating has not changed.");
+                return;
+            }
+            document.getElementById("rateForm").submit();
+        }
+    </script>
+    <script src="add_navbar.js?active=navRecipeInfo"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+body {
+	background-image: url("cas_background.jpg");
+	background-size: cover;
+}
+
+#logo {
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div {
+	background-color: rgb(76, 81, 82);
+}
+
+.form {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+a {
+	color: greenyellow;
+}

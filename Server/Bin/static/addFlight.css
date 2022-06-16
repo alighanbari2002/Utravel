@@ -1,0 +1,21 @@
+#addFlightDiv {
+	width: 100%;
+	margin-top: 30px;
+}
+
+#addFlightDiv {
+	background-color: rgba(36, 36, 36, 0.9);
+	border-bottom: 2px solid lavender;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+#addFlightDiv > *:not(:first-child, :last-child) {
+	margin-top: 10px;
+}
+
+#submitButton {
+	margin-top: 15px;
+}

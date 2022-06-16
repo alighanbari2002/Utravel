@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/common.css">
+    <link rel="stylesheet" href="/common_inputs.css">
+    <link rel="stylesheet" href="cas.css">
+    <title>Utravel - Central Authentication Service</title>
+</head>
+
+
+<body>
+    <img src="../logo.png" alt="utravel's logo" width="300" height="48" id="logo">
+
+    <!-- Login Form -->
+    <div class="form" id="lform" style="display: block;">
+        <form action="login" method="POST" id="loginform">
+            <label for="loginUsername">Username:</label><br>
+            <input type="text" id="loginUsername" name="username" placeholder="Write your username..." required><br>
+            <label for="loginPassword">Password:</label><br>
+            <input type="password" id="loginPassword" name="password" placeholder="Write your password..." required><br>
+            <input type="checkbox" id="loginShowPassword" onclick="showPassword(this)">
+            <label for="loginShowPassword">Show Password.</label><br>
+            <input type="submit" value="Login">
+            <p>Don't have an account? <a href="#" onclick='changeForms("signupform"); return false'>Sign Up</a></p>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form" id="sform" style="display: none;">
+        <form action="signup" method="POST" id="signupform">
+            <label for="signupUsername">Username:</label><br>
+            <input type="text" id="signupUsername" name="username" placeholder="Write your username..." required><br>
+            <label for="signupPassword">Password:</label><br>
+            <input type="password" id="signupPassword" name="password" placeholder="Write your password..." required><br>
+            <input type="checkbox" id="signupShowPassword" onclick="showPassword(this)">
+            <label for="signupShowPassword">Show Password.</label><br><br>
+
+            <br><input type="submit" value="Signup">
+            <p>Already have an account? <a href="#" onclick='changeForms("loginform"); return false;'>Login</a></p>
+        </form>
+    </div>
+
+
+    <script>
+        function showPassword(checkboxElement) {
+            let x;
+            if (checkboxElement.id == "loginShowPassword") {
+                x = document.getElementById("loginPassword");
+            }
+            else x = document.getElementById("signupPassword");
+
+            if (checkboxElement.checked) {
+                x.type = "text";
+            }
+            else x.type = "password";
+        }
+
+        function changeForms(to) {
+            let lform = document.getElementById("lform");
+            let sform = document.getElementById("sform");
+            if (to === "signupform") {
+                lform.style.display = "none";
+                sform.style.display = "block";
+                document.getElementById("loginform").reset();
+                document.getElementById("loginPassword").type = "password";
+            }
+            else if (to === "loginform") {
+                sform.style.display = "none";
+                lform.style.display = "block";
+                document.getElementById("signupform").reset();
+                document.getElementById("signupPassword").type = "password";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

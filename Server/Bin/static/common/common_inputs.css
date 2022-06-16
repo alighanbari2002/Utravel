@@ -1,0 +1,54 @@
+input,
+button.inputbtnG {
+	color: white;
+}
+
+input:not([type="checkbox"], [type="radio"], [type="number"]),
+button.inputbtnG {
+	width: 100%;
+	margin: 8px 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="url"] {
+	display: inline-block;
+	background-color: rgb(26, 26, 26);
+	border: 1px solid rgba(212, 212, 212, 0.6);
+	border-radius: 3px;
+	box-sizing: border-box;
+	padding: 12px 20px;
+}
+textarea {
+	background-color: rgb(26, 26, 26);
+}
+
+input[type="submit"],
+button.inputbtnG {
+	background-color: rgb(60, 180, 60);
+	font-weight: bold;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+}
+input[type="submit"]:hover,
+button.inputbtnG:hover {
+	background-color: rgb(60, 160, 60);
+}
+
+input[type="number"] {
+	background-color: rgb(26, 26, 26);
+}
+
+/*hide input number +- buttons*/
+/*Chrome, Safari, Edge, Opera*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*Firefox*/
+input[type=number] {
+  -moz-appearance: textfield;
+}

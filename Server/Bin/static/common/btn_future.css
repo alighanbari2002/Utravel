@@ -1,0 +1,16 @@
+.btnFuture {
+	display: inline-block;
+	border: 2px solid rgb(0, 140, 200);
+	background-color: rgb(26, 26, 26);
+	color: white;
+	padding: 12px 32px;
+	text-align: center;
+	font-size: large;
+	text-decoration: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+}
+
+.btnFuture:hover {
+	background-color: rgb(0, 140, 200);
+}
